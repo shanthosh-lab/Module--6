@@ -8,7 +8,7 @@ To write a Python program to create a `Counter` class that can increment the val
 
 ---
 
-### ALGORITHM
+### ALGORITHM:
 
 1. **Start the Program.**
 2. **Define the `Counter` class.**
@@ -26,10 +26,37 @@ To write a Python program to create a `Counter` class that can increment the val
 ### PROGRAM
 
 ```
+class Counter:
+    def __init__(self):
+        self.count = 0
+
+    def increment(self):
+        self.count += 1
+
+    def display(self):
+        print("Current Counter Value:", self.count)
+
+
+# Example usage
+counter = Counter()
+
+# Increment and display
+counter.increment()
+counter.increment()
+counter.display()  # Should show 2
+
+counter.increment()
+counter.display()  # Should show 3
+
+
 
 ```
 
 ### OUTPUT
+![Screenshot 2025-04-28 211318](https://github.com/user-attachments/assets/aaf60e57-c2c7-4a99-84a4-78e9defaebb8)
+
+
 
 
 ### RESULT
+The program successfully creates a Counter class. Each call to increment() increases the counter value by 1, and display() correctly shows the current count.
