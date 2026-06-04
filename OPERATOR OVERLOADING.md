@@ -30,13 +30,49 @@ To write a Python program to perform division of two complex numbers using the b
 ---
 
 ### PROGRAM
+Reg no: 212223020023
+Name: Shanthosh S
 
 ```
+class Complex:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    # Overloading '/' operator
+    def __truediv__(self, other):
+        # Formula: (a+bi)/(c+di) = [(ac + bd) + (bc - ad)i] / (c^2 + d^2)
+        a, b = self.real, self.imag
+        c, d = other.real, other.imag
+        denominator = c**2 + d**2
+
+        real_part = (a * c + b * d) / denominator
+        imag_part = (b * c - a * d) / denominator
+
+        return Complex(real_part, imag_part)
+
+    def __str__(self):
+        return f"{self.real:.2f} + {self.imag:.2f}i"
+
+
+# Creating objects
+Ob1 = Complex(10, 21)
+Ob2 = Complex(2, 3)
+
+# Performing division
+result = Ob1 / Ob2
+
+# Displaying result
+print("Result of (10 + 21i) / (2 + 3i):")
+print(result)
+
 
 ```
 
 ### OUTPUT
+![Screenshot 2025-04-28 212051](https://github.com/user-attachments/assets/93dc2acc-d14d-4037-b279-15b1061de4a1)
 
 
 ### RESULT
+The program successfully demonstrates the division of two complex numbers using operator overloading.
 
